@@ -32,10 +32,10 @@ services:
       ports:
         - 8081:8080
 
-#    client:
-#        build: ./client
-#        volumes:
-#        - ./client:/app
-#        ports:
-#            - 3000:3000
-#        tty: true
+    client:
+        build: ./client
+        volumes:
+        - ./client:/app
+        ports:
+            - 4200:4200
+        tty: true
