@@ -3,6 +3,8 @@ version: "3.4"
 services:
     postgres:
       image: postgres:11.1-alpine
+      volumes:
+        - pgdata:/var/lib/postgresql/data
       environment:
         - POSTGRES_PASSWORD=2d71e50b79623b220fe6a7f235e87f29
         - POSTGRES_DB=api
@@ -32,10 +34,13 @@ services:
       ports:
         - 8081:8080
 
-    client:
-        build: ./client
-        volumes:
-        - ./client:/app
-        ports:
-            - 4200:4200
-        tty: true
+    # client:
+        # build: ./client
+        # volumes:
+        # - ./client:/app
+        # ports:
+           # - 4200:4200
+        # tty: true
+
+volumes:
+  pgdata:
