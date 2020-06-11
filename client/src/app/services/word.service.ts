@@ -12,12 +12,16 @@ const  httpOptions = {
 })
 export class WordService {
 
-  private basedURL = 'http://vps-920f8eab.vps.ovh.net/words/';
+  private basedURL = 'http://vps-920f8eab.vps.ovh.net:8089/words/';
 
   constructor(private http: HttpClient) { }
 
   get(): Observable<any> {
     return this.http.get(this.basedURL, httpOptions);
+  }
+
+  getPartialWord(partialWord: string): Observable<any> {
+    return this.http.get(this.basedURL + "?search=" + partialWord, httpOptions);
   }
 
   getById(id: number): Observable<any> {

@@ -19,8 +19,7 @@ export class SearchWordComponent implements OnInit {
   }
 
   valuechange(newValue) {
-    this.wordService.get().subscribe(words => {
-      console.log(words);
+    this.wordService.getPartialWord(newValue).subscribe(words => {
       this.words = words;
     })
   }
