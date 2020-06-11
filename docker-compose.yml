@@ -25,14 +25,13 @@ services:
             - ./api/public:/srv/api/public
             - ./api/docker/nginx/default.conf:/etc/nginx/conf.d/default.conf
         ports: 
-            - 80:80
-            - 443:443
+            - 8089:80
 
-    adminer:
-      image: adminer
-      restart: always
-      ports:
-        - 8081:8080
+#    adminer:
+#      image: adminer
+#      restart: always
+#      ports:
+#        - 8081:8080
 
     # client:
         # build: ./client
