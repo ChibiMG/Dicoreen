@@ -12,16 +12,26 @@ import { WordService } from "../services/word.service";
 })
 export class SearchWordComponent implements OnInit {
   words: Word[];
+  hidden : boolean;
 
-  constructor(private wordService: WordService) { }
+  constructor(private wordService: WordService) {
+    this.hidden = true;
+  }
 
   ngOnInit(): void {
   }
 
   valuechange(newValue) {
-    this.wordService.getPartialWord(newValue).subscribe(words => {
-      this.words = words;
-    })
+    if(newValue.length) {
+      this.hidden = false;
+      this.wordService.getPartialWord(newValue).subscribe(words => {
+        this.words = words;
+        this.hidden = true;
+      })
+    }
+    else{
+      this.words = [];
+    }
   }
 
 }

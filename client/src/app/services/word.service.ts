@@ -12,7 +12,7 @@ const  httpOptions = {
 })
 export class WordService {
 
-  private basedURL = 'http://vps-920f8eab.vps.ovh.net:8089/words/';
+  private basedURL = 'http://localhost:8089/words/';
 
   constructor(private http: HttpClient) { }
 
