@@ -1,0 +1,6 @@
+.search-field /deep/.mat-form-field-infix {
+    display: flex;
+}
+.spinner {
+    margin-right: 5px;
+}
