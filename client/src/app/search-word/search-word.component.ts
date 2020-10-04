@@ -4,6 +4,7 @@ import { FormControl } from '@angular/forms';
 import { Observable } from 'rxjs';
 import {map, startWith} from 'rxjs/operators';
 import { WordService } from "../services/word.service";
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-search-word',
@@ -14,7 +15,7 @@ export class SearchWordComponent implements OnInit {
   words: Word[];
   hidden : boolean;
 
-  constructor(private wordService: WordService) {
+  constructor(private wordService: WordService, private router : Router) {
     this.hidden = true;
   }
 
@@ -32,6 +33,14 @@ export class SearchWordComponent implements OnInit {
     else{
       this.words = [];
     }
+  }
+
+  public search(word){
+    this.router.navigate(['/display-word', word.id]);
+  }
+
+  display(word : Word){
+    return "";
   }
 
 }

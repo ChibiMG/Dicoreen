@@ -8,9 +8,9 @@
            [matAutocomplete]="auto"
            (input)="valuechange($event.target.value)">
     <mat-spinner class="spinner" diameter="14" *ngIf="!hidden"></mat-spinner>
-    <mat-autocomplete #auto="matAutocomplete">
-      <mat-option *ngFor="let word of words" [value]="word.id">
-        {{word.french}} - {{ word.korean }}
+    <mat-autocomplete #auto="matAutocomplete" (optionSelected)="search($event.option.value)" [displayWith]="display">
+      <mat-option *ngFor="let word of words" [value]="word">
+        {{ word.french }} - {{ word.korean }}
       </mat-option>
     </mat-autocomplete>
   </mat-form-field>

@@ -1,0 +1,4 @@
+<div *ngIf="word">
+    <mat-card >{{ word.type }} {{ word.french }} = {{ word.korean }}</mat-card>
+    <mat-card *ngIf="word.example">{{ word.example }}</mat-card>
+</div>

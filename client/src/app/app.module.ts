@@ -13,11 +13,14 @@ import { WordService } from "./services/word.service";
 import { HttpClientModule } from "@angular/common/http";
 import { MatButtonModule } from "@angular/material/button";
 import { MatProgressSpinnerModule } from "@angular/material/progress-spinner";
+import { DisplayWordComponent } from './display-word/display-word.component';
+import { MatCardModule } from '@angular/material/card';
 
 @NgModule({
   declarations: [
     AppComponent,
-    SearchWordComponent
+    SearchWordComponent,
+    DisplayWordComponent
   ],
   imports: [
     BrowserModule,
@@ -30,7 +33,8 @@ import { MatProgressSpinnerModule } from "@angular/material/progress-spinner";
     ReactiveFormsModule,
     HttpClientModule,
     MatButtonModule,
-    MatProgressSpinnerModule
+    MatProgressSpinnerModule,
+    MatCardModule
   ],
   providers: [
     WordService
